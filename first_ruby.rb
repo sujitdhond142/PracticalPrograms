@@ -9,6 +9,6 @@ elsif(day==3)
 elsif(day==4)
 	puts("the day is thursday")
 elsif(day==5)
-	puts("the day is i odn't know")
+	puts("the day is i don't know")
 end
 
