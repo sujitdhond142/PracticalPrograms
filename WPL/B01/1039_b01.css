@@ -58,7 +58,8 @@ div.content div.ordered_list ol {
 div.content div.table {
     width:100%;
     height:auto;
-    padding:10px;   
+    padding:10px;  
+    font-family:sans-serif; 
 }
 div.content div.table p {
     width:60%;
@@ -67,7 +68,28 @@ div.content div.table p {
     font-family:sans-serif;
 
 }
-
+div.content div.table table {
+    width:40%;
+    text-align:center;
+    margin: 20px  auto;
+    border-bottom:1px dotted #3498db
+}
+div.content div.table table tr.header th {
+    background-color:#3498db;
+    color:#fff;
+    padding:8px 10px;
+    border-radius:5px;
+}
+div.content div.table table tr:nth-child(odd) {
+    background-color:#f2f2f2;
+}
+div.content div.table table td {
+    padding:5px 5px;
+    border-radius:5px;
+}
+div.content div.table table tr:hover {
+    background-color:#aaa;
+}
 
 
 
@@ -79,6 +101,6 @@ div.footer {
     width:100%;
     padding:10px 30px;
     text-align:center;
-    font-family:sans-serif;
+    font-family:sans-serif; 
 }
 
