@@ -1,0 +1,175 @@
+<!--
+    Aim:- Develop and demonstrate, using Javascript, a XHTML document that:
+            a. Collects the USN ( the valid format is: A digit from 1 to 4 followed by two upper-
+            case characters followed by two digits followed by two upper- case characters followed by three digits; no embedded spaces allowed) of the user. Event handler must be included for the form element that collects this information to validate the input. Messages in the alert windows must be produced when errors are detected.
+            b. Modify the above program to get the current semester also (restricted to be a number from 1 to 8).
+    Name:- Ankush Patil
+    PRN:- 1541039
+    Batch:- T2
+    Sub:- WPL
+-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/TR/xhtml1" xml:lang="en" lang="en">
+<head>
+	<title>The USN and USN with Semester </title>
+    <style>
+        *{padding:0;margin:0;box-sizing:border-box;outline:none;}
+        body,html{height:100%;max-height:100% !important;}
+        /*template ends*/
+        div.header {
+            width:100%;
+            height:14%;
+            min-height:80px;
+            background-color:#eee;
+            color:#c0392b;
+            text-align:center;
+            padding-top:1%;
+        }
+        div.content {
+            width:100%;
+            height:auto;
+            padding-top:5%;
+            text-align:center;
+        }
+        div.content h2 {
+            font-family:sans-serif;
+            width:70%;
+            margin:0 auto;
+            color:#c0392b
+        }
+        button{
+            padding:10px 10px;
+            min-width:200px;
+            border:none;
+            margin:50px;
+            border-radius:10px;
+            background-color:transparent;
+            border:1px solid #c0392b;
+            color:#c0392b;
+            transition-duration:0.250s;
+        }
+        button:hover {
+        	background-color:#c0392b;
+        	color:#fff;
+        	cursor:pointer;
+        	font-weight:bold;
+        }
+
+        div#checkUSN , div#checkUSNWithSemester {
+            width:80%;
+            margin:0 auto;
+            border-top:1px solid #ddd;
+            text-align:center;
+            padding-top:20px;
+            display:none;
+        }
+        div.block {margin-top:20px;}
+        label {
+            margin-right:10px;
+            font-family:sans-serif;
+        }
+        input[type=text] {
+            padding:10px 20px;
+            border:1px solid #ddd;
+            border-radius:10px;
+            width:250px;
+        }
+
+
+
+
+
+        div.footer {
+            width:100%;
+            background-color:#eee;
+            color:#c0392b;
+            padding:10px;
+            text-align:center;
+            position:relative;
+            margin-top:23%;
+        }
+    </style>
+</head>
+<body>
+		<div class="header">
+			<h1>WPL B 04 a and b</h1>
+        </div>
+		<div class = "content">
+            <h2>What you want to do ? </h2>
+            <button  onclick="setUpUSN()">a. USN</button>
+            <button onclick="setUpUSNWithSemester()">b. USN With Semester</button>        
+        </div>
+        
+        <div id="checkUSN">
+            <label for="usn">Input String : </label>
+            <input type="text" placeholder="" name="usn">
+            <button onclick="checkUSN()">Check USN</button>
+            <button onclick="closeForm()" style="margin-left:0px">Close</button>
+            
+        </div>
+        <div id="checkUSNWithSemester">
+                <div class="block">
+                    <label for="usn">Input String &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </label>
+                    <input type="text" id="usn" placeholder="" name="usn">
+                </div>
+                <div class="block">
+                    <label for="usn">Input Semester : </label>                
+                    <input type="text" placeholder="" name="semester">
+                </div>
+                <button onclick="checkUSNWithSemester()">Check USN With Semester</button>
+                <button onclick="closeForm()" style="margin-left:0px">Close</button>     
+        </div>
+        <div id="result"></div>
+        <div class="footer">
+            <p> Designed &amp; Developed By Ankush Patil</p>
+        </div>
+        <script>
+            /* checking the usn only*/
+        	function setUpUSN() {
+                var usnForm = document.getElementById('checkUSNWithSemester');
+                usnForm.style.display = "none";
+                var usnForm = document.getElementById('checkUSN');
+                usnForm.style.display = "block";
+            }
+            function checkUSN() {
+                var pattern = /[1-4][A-Z][A-Z][0-9][0-9][A-Z][A-Z][0-9][0-9][0-9]$/ ;
+                var input = document.getElementById(usn).value;
+                alert(input);					
+                if(! input.match(pattern))
+                {
+                    alert("INVALID STRING");
+                    alert("Value Rejected!!");
+                    return false;
+                }
+                else
+                {
+                    document.getElementById('result').innerHTML = "Input is verified!!!";
+                    alert("Value Accepted!!");
+                    return false;
+                }
+            }
+
+            /* checking the usn with the semester */
+            function setUpUSNWithSemester() {
+                var usnForm = document.getElementById('checkUSN');
+                usnForm.style.display = "none";
+                var usnForm = document.getElementById('checkUSNWithSemester');
+                usnForm.style.display = "block";
+            }
+            function checkUSNWithSemester() {
+
+
+            }
+            /* close the forms */
+            function closeForm() {
+                var usnForm = document.getElementById("checkUSN");
+                usnForm.style.display = "none";
+                var usnForm = document.getElementById("checkUSNWithSemester");
+                usnForm.style.display = "none";
+            }
+
+        </script>
+</body>
+</html>
