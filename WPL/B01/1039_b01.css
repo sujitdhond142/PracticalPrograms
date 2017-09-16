@@ -1,0 +1,84 @@
+/* coded by AnkushPatil */
+*{padding:0;margin:0;box-sizing:border-box;}
+body,html{height:100%;max-height:100%}
+/* template ends */
+
+
+/* styling up header */
+
+div.header {
+    background-color:#3498db;
+    color:#fff;
+    height:15%;
+    min-height:70px;
+    text-align:center;
+    padding-top:1%;
+    box-shadow:1px 0px 10px -1px #000;
+}
+div.header h1,div.header h3{
+    font-family:sans-serif;
+}
+
+
+/* styling up content */
+div.content {
+    width:100%;
+}
+div.content div.info {
+    width:100%;
+    height:20%;
+    text-align:center;
+    padding-top:3%;
+}
+div.content div.info p {
+    color:#000;
+    font-family:sans-serif;
+    width:60%;
+    margin:0 auto;
+    font-weight:bold;
+}
+div.content div.ordered_list {
+    width:100%;
+    height:30%;
+    background-color:#eee;
+    padding:20px 25%;
+    text-align:left;
+    margin:0 auto;
+    font-family:sans-serif;
+}
+div.content div.ordered_list p{ 
+    margin:0 auto;
+    font-weight:bold;
+}
+div.content div.ordered_list ol {
+    padding-left:50%;
+}
+
+
+div.content div.table {
+    width:100%;
+    height:auto;
+    padding:10px;   
+}
+div.content div.table p {
+    width:60%;
+    margin:0 auto;
+    font-weight:bold;
+    font-family:sans-serif;
+
+}
+
+
+
+
+/* styling up footer */
+
+div.footer {
+    background-color:#222;
+    color:#fff;
+    width:100%;
+    padding:10px 30px;
+    text-align:center;
+    font-family:sans-serif;
+}
+
