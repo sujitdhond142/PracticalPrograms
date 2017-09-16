@@ -1,0 +1,131 @@
+<!--
+    Aim:- Develop and demonstrate a XHTML file that includes Javascript for the following problems:
+        a. Input : A number n obtained using prompt. Output : The first n Fibonacci numbers.
+        b. Input : A number n obtained using prompt
+        Output : A table of numbers from 1 to n and their squares using alert
+    Name:- Ankush Patil
+    PRN:- 1541039
+    Batch:- T2
+    Sub:- WPL
+-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/TR/xhtml1" xml:lang="en" lang="en">
+
+<head>
+	<title>Fibbo </title>
+
+    <style>
+        *{padding:0;margin:0;box-sizing:border-box;outline:none;}
+        body,html{height:100%;max-height:100% !important;}
+        /*template ends*/
+        div.header {
+            width:100%;
+            height:14%;
+            min-height:80px;
+            background-color:#eee;
+            color:#c0392b;
+            text-align:center;
+            padding-top:1%;
+        }
+
+        div.content {
+            width:100%;
+            height:auto;
+            padding-top:5%;
+            text-align:center;
+        }
+        div.content h2 {
+            font-family:sans-serif;
+            width:70%;
+            margin:0 auto;
+            color:#c0392b
+        }
+        div.content button ,div.clear button{
+            padding:10px 10px;
+            min-width:200px;
+            border:none;
+            margin:50px;
+            border-radius:10px;
+            background-color:transparent;
+            border:1px solid #c0392b;
+            color:#c0392b;
+            transition-duration:0.250s;
+        }
+        div.content button:hover,div.clear button:hover {
+        	background-color:#c0392b;
+        	color:#fff;
+        	cursor:pointer;
+        	font-weight:bold;
+        }
+        div#result {
+        	width:70%;
+        	margin:0 auto;
+        	font-family:sans-serif;
+        	font-weight:bold;
+        }
+        div.clear {
+        	width:100%;
+        	text-align:center;
+        }
+        div.clear button {display:none}
+        div.footer {
+            width:100%;
+            background-color:#eee;
+            color:#c0392b;
+            padding:10px;
+            text-align:center;
+            position:relative;
+            margin-top:23%;
+            bottom:0;
+        }
+    </style>
+</head>
+<body>
+		<div class="header">
+			<h1>WPL B 02 a </h1>
+        </div>
+		<div class = "content">
+            <h2>What you want to do ? </h2>
+            <button id="fibbo" onclick="findFibbo()">Fibonacci</button>
+        </div>
+        <div id="result"></div>
+        <div class="clear">
+        	<button id="clearScreen" onclick="clrscr()">Clear</button>
+        </div>
+        <div class="footer">
+            <p> Designed &amp; Developed By Ankush Patil</p>
+        </div>
+        <script>
+        	function findFibbo() {
+                var no = prompt("Enter a number : ");
+                var i=1;
+                while(no <= 0 || isNaN(no)) {
+                    var no = prompt("Must be a positive Number : (try again "+i+"  ) ");
+                    i++;
+                    if(i==3)
+                        alert("Lots Of Try Come Back Tommorow");
+                }
+                var a=1,b=1;
+                var result =  document.getElementById("result");
+                var clearButton = document.getElementById("clearScreen");
+                result.innerHTML = a+", "+b;
+                for(i=1;i<=no;i++) {
+                    c=a+b;
+                    a=b;
+                    b=c;
+                    result.innerHTML += ", "+c;
+                }
+                clearButton.style.display="inline";          
+            }
+            function clrscr() {
+                var result =  document.getElementById("result");
+                var clearButton = document.getElementById("clearScreen");
+                result.innerHTML = "";
+                clearButton.style.display="none";                
+            }
+        </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!--
+    Aim:- Develop and demonstrate a XHTML file that includes Javascript for the following problems:
+        a. Input : A number n obtained using prompt. Output : The first n Fibonacci numbers.
+        b. Input : A number n obtained using prompt
+        Output : A table of numbers from 1 to n and their squares using alert
+    Name:- Ankush Patil
+    PRN:- 1541039
+    Batch:- T2
+    Sub:- WPL
+-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/TR/xhtml1" xml:lang="en" lang="en">
+
+<head>
+	<title> Square</title>
+    <style>
+        *{padding:0;margin:0;box-sizing:border-box;outline:none;}
+        body,html{height:100%;max-height:100% !important;}
+        /*template ends*/
+        div.header {
+            width:100%;
+            height:14%;
+            min-height:80px;
+            background-color:#eee;
+            color:#c0392b;
+            text-align:center;
+            padding-top:1%;
+        }
+        div.content {
+            width:100%;
+            height:auto;
+            padding-top:5%;
+            text-align:center;
+        }
+        div.content h2 {
+            font-family:sans-serif;
+            width:70%;
+            margin:0 auto;
+            color:#c0392b
+        }
+        div.content button ,div.clear button{
+            padding:10px 10px;
+            min-width:200px;
+            border:none;
+            margin:50px;
+            border-radius:10px;
+            background-color:transparent;
+            border:1px solid #c0392b;
+            color:#c0392b;
+            transition-duration:0.250s;
+        }
+        div.content button:hover {
+        	background-color:#c0392b;
+        	color:#fff;
+        	cursor:pointer;
+        	font-weight:bold;
+        }
+        table{display: none;}
+    </style>
+</head>
+<body>
+		<div class="header">
+			<h1>WPL B 02 b </h1>
+        </div>    
+		<div class = "content">
+            <h2>What you want to do ? </h2>
+            <button id="square" onclick = "findSquares()">Sqaure Up To N</button>
+        </div>
+        <div class="table">
+            <table id="squareTable">
+                <tr>
+                    <th>Number</th>
+                    <th>Square</th>
+                </tr>
+            </table>
+        </div>
+        <script>
+            function findSquares() {
+                var no = prompt("Enter a number : " );
+                var i=1;
+                while(no <=0 || isNaN(no) ) {
+                    var no = prompt("Must be a positive number > 0 : ");
+                    if(i==3) {
+                        alert("Lots Of Try go Home Try Tommorow");
+                    }
+                    i++;
+                }
+                var table = document.getElementById("squareTable");
+                var string = "Number           Square\n";
+                for(i=1;i<=no;i++) {
+                    string +=""+i+"                         "+i*i+" \n";
+                }
+                alert(string);
+            }
+        </script>
+</body>
+</html>
