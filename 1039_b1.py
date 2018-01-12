@@ -3,6 +3,9 @@
     Name  : Ankush Patil
     Prn   : 1541039
     Batch : T2
+
+    Feature : v1.3 user validation added with terminal clearance
+
 '''
 #importing libraries
 import os
@@ -17,7 +20,7 @@ def Display_menu():
         os.system('clear')
 
         print "_______________MENU_________________"
-        print "1.Find square root of no : "
+        print "\n1.Find square root of no : "
         print "2.Find area of rectangle : "
         print "3.Swap two nos : "
         print "4.Data Structures: list,dictonaries,tuples"
@@ -37,7 +40,10 @@ def Display_menu():
             print ""
             print "That's not a number"
             continue
-
+        
+        print ""
+        print "_____________________________________"
+        print ""
         #summing it up in options dictionery
     
         options = { 1  : findSqrt,
@@ -60,7 +66,7 @@ def Display_menu():
             print ""
             print "Invalid Choice Please Enter Valid One"
 
-        print "____________________________________________"
+        print "______________________________________"
         print ""
         dec = raw_input("Do you want to try again (y/n) : ")
         print ""
@@ -77,7 +83,15 @@ def checkDecision(ans):
         return False
 
 def findSqrt():
-    print "in"
+    
+    try:
+        number = int(input("Enter a number to find its square root : "))
+    except NameError:
+        print ""
+        print "That's not a number."
+
+    sqrt = math.sqrt(number)
+    print "Square root of the number is "+str(sqrt)
 
 def findArea():
     print "in"
