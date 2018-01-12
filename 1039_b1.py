@@ -94,34 +94,123 @@ def findSqrt():
     print "Square root of the number is "+str(sqrt)
 
 def findArea():
-    print "in"
+    numbers = raw_input("Enter width and height of the rectangle separating space : ").split()
+    
+    try:
+        width = int(numbers[0])
+        height = int(numbers[1])
+    except NameError:
+        print ""
+        print "One is not a number out of width and height"
+    area = width * height
+    print "The area of the rectangle is "+ str(area)
 
 def findEvenOdd():
-    print "in"
+   
+    try:
+        number = int(raw_input("Enter a number to check its parity : "))
+        if(number%2==1):
+            print "The number is odd"
+        else:
+            print "The number is even"
+    except NameError:
+        print ""
+        print "Please enter a valid number"
+
 
 def findLargest():
-    print "in"
+    numbers = raw_input("Enter three number with spaces inbetween :").split()
+    try:
+        n1 = int(numbers[0])
+        n2 = int(numbers[1])
+        n3 = int(numbers[2])
+
+        if n1>n2 and n1 >n3:
+            print str(n1) + " is greater."
+        elif n1<n2 and n2>n3:
+            print str(n2) + " is greater."
+        else:
+            print str(n3) + " is greater."
+    
+    except NameError:
+        print ""
+        print "Please enter valid numbers"
 
 def findFibbo():
-    print "in"
+    b=1
+    i=0
+    num=int(input("Enter a no : "))
+    print("Fibonacci series :")
+    a=1
+    for i in range(num):
+        print str(a) + ", ",
+        tmp=b
+        b=a+b
+        a=tmp
+    print ""
+
 
 def swapper():
-    print "in"
+    number = raw_input("Enter the two number to swap : ").split()
+    try:
+        n1 = int(number[0])
+        n2 = int(number[1])
+        print "Number before swapping : n1=" + str(n1) + " and n2=" + str(n2)
+        n1,n2=n2,n1
+        print "Number after swapping :  n1=" + str(n1) + " and n2=" + str(n2)
+    except NameError:
+        print ""
+        print "Error:Please enter the valid numbers"
 
 def isLeap():
-    print "in"
+    a=int(input("Enter year : "))
+    if a%4==0:
+        if a%400==0:
+            print("Not a leap year")
+        else:
+            print("It's a leap year")	
+    else:
+            print("Not a leap year")
+  
 
 def useDS():
-    print "in"
+    print("Data structures : ")
+    a=[20,"Here I am second in the a.",223]
+    print("1. List :")
+    print(a)
+    b=(4,"Here I am second in the b.",21326)
+    print("2. Tuple :")
+    print(b)
+    c={1:"one",2:"two",3:"three"}
+    print("3. Dictionary :")
+    print(c)
 
 def useWhile():
-    print "in"
+    num=6
+    while num > 0:
+        num=num-1
+        print("I am in while loop")
+    else:
+        print("I am in else loop")
+
 
 def findPrimeUptoN():
-    print "in"
+    num = int(input("Enter your range : "))
+    flag=0
+    for i in range(num):
+        count = 0
+        for j in range(i):
+            if i%(j+1)==0:
+                count=count+1
+        if count==2:
+            flag=flag+1
+    print("Prime nos in given range : ",flag)
 
 def operation():
-    print "in"
+    string = "governmentcollege"
+    print("Second letter of word is : ",string[1:2])
+    print("First four letters are : ",string[:4])
+    print("Last six letters are :",string[-6::1])
 
 
 
