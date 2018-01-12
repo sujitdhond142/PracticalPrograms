@@ -176,7 +176,7 @@ def isLeap():
 def useDS():
     print("Data structures : ")
     a=[20,"Here I am second in the a.",223]
-    print("1. List :")
+    print("1. List  :")
     print(a)
     b=(4,"Here I am second in the b.",21326)
     print("2. Tuple :")
@@ -204,7 +204,7 @@ def findPrimeUptoN():
                 count=count+1
         if count==2:
             flag=flag+1
-    print("Prime nos in given range : ",flag)
+    print(" Prime nos in given range : ",flag)
 
 def operation():
     string = "governmentcollege"
