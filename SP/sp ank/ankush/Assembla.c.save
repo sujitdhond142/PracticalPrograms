@@ -1,0 +1,31 @@
+#include<stdio.h> 
+#include<string.h> 
+#include<math.h> 
+#include<stdlib.h>
+
+
+/* struct opCodes {
+	int counter; char name[4]; char opcode[4];
+}MOT[20],POT[20];
+*/
+
+
+int main() {
+	int i=0; int j=0; int k=0;
+	char MOT[20][2][5]= { "ADD","0001",
+				"SUB","0010", "MUL","0011", "DIV","0100", "ADC","0101", "MOV","0110", "JZ","0111", "JNZ","1000", "JNC","1001", 
+				"JC","1010", "CMP","1011", "INC","1100", "DEC","1101", "LOAD","1110", "DAA","1111" };
+
+	for(i=0;i<20;i++) {
+		for(j=0;j<2;j++) {
+
+				printf("%s  ",MOT[i][j]);
+				//printf("%c ",MOT[i][k]);
+		}
+		printf("\n");
+	}
+	return 0;
+
+
+
+}

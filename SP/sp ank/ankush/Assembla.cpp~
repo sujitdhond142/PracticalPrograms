@@ -1,0 +1,85 @@
+#include<stdio.h>
+#include<string.h>
+#include<math.h>
+#include<stdlib.h>
+
+
+#define DEBUG 1
+
+/* struct opCodes {
+	int counter; char name[4]; char opcode[4];
+}MOT[20],POT[20];
+*/
+void printMOT(int,int,char table[20][2][5]);
+void printPOT(int,int,char table[20][2][6]);
+void checkInMOT(FILE *, int);
+void checkInT(FILE *,char T[20][2][5]);
+
+int main() {
+	//declaring variables 
+
+	char temp; //for reading from the file
+	int i=0; int j=0; int k=0;
+
+	char MOT[20][2][5]= { "ADD","0001",
+				"SUB","0010", "MUL","0011", "DIV","0100", "ADC","0101", "MOV","0110", "JZ","0111", "JNZ","1000", "JNC","1001",
+				"JC","1010", "CMP","1011", "INC","1100", "DEC","1101", "LOAD","1110", "DAA","1111" };
+	char POT[8][2][6]= { "USING","0001",
+				"START","0010",
+				"DROP","0011",
+				"DW","0100",
+				"DQ","0101",
+				"DS","0110",
+				"DT","0111",
+				"ASSUME","1000"
+			};
+	FILE *pIn;
+	
+
+
+
+	pIn=fopen("program.txt","r");
+	if(pIn==NULL) {
+		printf("\nFileOpening Error");
+		exit(0);
+	}
+
+
+	if(!DEBUG) {
+		temp=fgetc(pIn);
+
+		while(temp!=EOF) {
+			printf("%c",temp);
+			temp=fgetc(pIn);
+		}
+	}
+
+	if(!DEBUG) {
+		printMOT(0,0,MOT);
+		printPOT(0,0,POT);
+	}
+	return 0;
+
+}
+
+
+void printMOT(int i,int j,char table[20][2][5]) {
+	printf("OPERATION\tBINARY CODE\n");
+	for(i=0;i<20;i++) {
+                for(j=0;j<2;j++) {
+                                printf("%s\t",table[i][j]);
+                }
+                printf("\n");
+        }
+}
+void printPOT(int i,int j,char table[8][2][6]) {
+	printf("OPERATION\tBINARY CODE\n");
+	  for(i=0;i<8;i++) {
+                for(j=0;j<2;j++) {
+                        printf("%s\t",table[i][j]);
+                }
+                printf("\n");
+        }
+}
+void checkInMOT(FILE *,
+

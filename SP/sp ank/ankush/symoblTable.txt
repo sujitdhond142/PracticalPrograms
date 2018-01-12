@@ -1,0 +1,4 @@
+ANK	4	R
+X	9	A
+R	18	A
+LOOP	32	R
