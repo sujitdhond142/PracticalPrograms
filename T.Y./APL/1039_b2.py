@@ -144,7 +144,7 @@ def useDictonaries():
 	while ans == 'y' or ans == 'Y':
 			
 		prn = raw_input("\nEnter prn : ")
-		marks = raw_input("Enter marks : ")
+		marks = raw_input("Enter marks  : ")
 		d[prn]=marks
 
 		ans = raw_input("want to add more entries y/n : ")
