@@ -1,0 +1,115 @@
+Script started on Sat 13 Jan 2018 12:49:47 PM IST
+]0;asprazz@asprazz: /AnkushPatil/Developer_zone/PracticalPrograms/T.Y./APL[01;32masprazz@asprazz[00m:[01;34m/AnkushPatil/Developer_zone/PracticalPrograms/T.Y./APL[00m$ put[K[Kython 1039_b2.py 
+[3;J[H[2J________________MENU_________________
+
+1.Find occurence of character with use of functions  
+2.To demonstrate use of data structures  
+Enter your choice :1
+Enter first string: Her   The    ^H^H     Python is be  interpreted high-lef vel programming language for general-puro pose programming
+Enter character to check occurences :p
+The number of Occurences of str2 in str 1 are :6
+____________________________________________
+
+Do you want to try again (y/n) : y
+
+[3;J[H[2J________________MENU_________________
+
+1.Find occurence of character with use of functions  
+2.To demonstrate use of data structures  
+Enter your choice :2
+
+Which one do you want to use :
+1. Lists
+2. Demonstrate tuples
+3. Marks table using dictionaries
+Enter your choice :1
+Minimum = 1 and Maximum is :8
+Try again ? (y/n) : y
+Minimum = 1 and Maximum is :8
+Try again ? (y/n) : 2
+____________________________________________
+
+____________________________________________
+
+Do you want to try again (y/n) : y
+
+[3;J[H[2J________________MENU_________________
+
+1.Find occurence of character with use of functions  
+2.To demonstrate use of data structures  
+Enter your choice :2
+
+Which one do you want to use :
+1. Lists
+2. Demonstrate tuples
+3. Marks table using dictionaries
+Enter your choice :2
+
+Enter the colour in rgb format :
+r = 100
+g = 100
+b100
+The rgb tupple is :
+(100, 100, 100)
+____________________________________________
+
+____________________________________________
+
+Do you want to try again (y/n) : y
+
+[3;J[H[2J________________MENU_________________
+
+1.Find occurence of character with use of functions  
+2.To demonstrate use of data structures  
+Enter your choice :2
+
+Which one do you want to use :
+1. Lists
+2. Demonstrate tuples
+3. Marks table using dictionaries
+Enter your choice :3
+
+Enter inputs :
+
+Enter prn : 1540193  39
+Enter marks : 01 40   40
+want to add more entries y/n : y
+
+Enter prn : 1541038
+Enter marks : 41
+want to add more entries y/n : y
+
+Enter prn : 14 54103 17
+Enter marks : 00  100   99
+want to add more entries y/n : n
+
+The dictonaries after entries is : 
+1540139 : 40 
+1541017 : 99 
+1541038 : 41 
+
+The dictonary after sorting : 
+1540139 : 40
+1541017 : 99
+1541038 : 41
+____________________________________________
+
+____________________________________________
+
+Do you want to try again (y/n) : y
+
+[3;J[H[2J________________MENU_________________
+
+1.Find occurence of character with use of functions  
+2.To demonstrate use of data structures  
+Enter your choice :n
+
+Error : You entered something else other than number
+____________________________________________
+
+Do you want to try again (y/n) : n
+
+]0;asprazz@asprazz: /AnkushPatil/Developer_zone/PracticalPrograms/T.Y./APL[01;32masprazz@asprazz[00m:[01;34m/AnkushPatil/Developer_zone/PracticalPrograms/T.Y./APL[00m$ clear[K[K[K[K[Kexit
+exit
+
+Script done on Sat 13 Jan 2018 12:51:48 PM IST

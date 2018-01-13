@@ -17,7 +17,7 @@ def displayMenu():
 		#clearing the terminal
 		os.system('clear')
 		print "________________MENU_________________"
-		print "\n1.To demonstrate use of functions  "
+		print "\n1.Find occurence of character with use of functions  "
 		print "2.To demonstrate use of data structures  "
 
 		options = { 1 : useFunction,
@@ -27,11 +27,7 @@ def displayMenu():
 		choice = takeInput("Enter your choice :")
 
 		if choice != -1:
-			try:
-				options[choice]()
-			except:
-				print ""
-				print "Please enter valid choice."
+			options[choice]()
 
 		print "____________________________________________"
 		print ""
@@ -60,83 +56,107 @@ def takeInput(msg):
 #programm functions
 
 def useFunction():
-	print "\nDemonstration of function by calculating the max subarray sum in an array and minimum value in the array "
-	n = takeInput("\nEnter size of array : ")
-	if n!=-1:
-		numbers = raw_input("Enter the ele. of array : ").split()
-		max_sum,minn = calculateMaxSubarraySum(numbers) #passing the array in string format
-		print "The maximum subarray sum of the array is : " + str(max_sum)
-		print "And the minimum value of the array is :" + str(minn)
-	else:
-		print "Error: Size must be a number"
+	str1=raw_input("Enter first string: ")
+	str2=raw_input('Enter character to check occurences :')
+	
+	occ = count(str1,str2)
+	
+	print "The number of Occurences of str2 in str 1 are :" + str(occ)
 
-def calculateMaxSubarraySum(numbers):
 
-	#algo to calculate max subarray sum complexity O(n)
-	best = 0
-	max_sum = 0;
-	m = 1000000
-	for k in xrange(0,len(numbers)):
-		max_sum = max(int(numbers[k]),max_sum+int(numbers[k]));
-		best = max(best,max_sum);
-	for k in numbers:
-		m = min(m,int(k))
-	return best,m   #returning an the best
+def count(text, ch, ignore_case=True):
+	if ignore_case:
+		text = text.lower()
+		ch = ch.lower()
+	n = 0
+	for t in text:
+		if ch == t:
+			n += 1
+	return n
+
 
 def useDatastructures():
 
 	print "\nWhich one do you want to use :"
-	print "1. List as stack"
+	print "1. Lists"
 	print "2. Demonstrate tuples"
-	print "3. Book's list using dictonaries"
+	print "3. Marks table using dictionaries"
 
-	sub_options = { 1 : useLists
+	sub_options = { 1 : useLists,
+					2 : useTuples,
+					3 : useDictonaries
 	}
 	#take input as choice with validation)
 
 	sub_choice = takeInput("Enter your choice :")
 	if sub_choice != -1:
-		try:
-			sub_options[sub_choice]()
-		except:
-			print ""
-			print "Please enter valid choice."
+		sub_options[sub_choice]()
 
 	print "____________________________________________"
 	print ""
 
+
+def min_max(numbers):
+	smallest = largest = numbers[0]
+	for item in numbers:
+		if item > largest:
+			largest = item
+		elif item < smallest:
+			smallest = item
+	return smallest, largest
+
 def useLists():
-    
-	stack = []  #defining list as stack
 	
 	ans = 'y'
-	
 	while ans=='y' or ans=='Y':
-		print "\nCall from below "
-		print "1.Push 2. Pop 3. PrintStck "
-
-		call_nu = takeInput("Enter choice :")
-		if call_nu != -1:
-			
-			if call_nu == 1:
-    			
-				n = int(raw_input("Enter number to push : "))
-				stack.append(n)
-			
-			elif call_nu == 2:
-    		
-				n = stack.pop()
-				print str(n)+ " is popped out."
-			elif call_nu == 3:
-    		
-				for i in stack:
-    		
-					print i
-		else:
-			print "Invalid Choice"
-		print ""
+		minn, maxx = min_max([1, 2, 7, 6, 3, 1, 2, 8, 4])
+		print "Minimum = "+str(minn)+" and Maximum is :" +str(maxx)
 		ans = raw_input("Try again ? (y/n) : ")
 
+def useTuples():
+	
+	'''
+	months = ('January','February','March','April','May','June',\
+				'July','August','September','October','November','  December')
+	
+	date = raw_input("\nEnter you birthdate (dd-mm-yyyy) : ").split("-")
+	print "<(0 _ 0)> You launched in this world in " + months[int(date[1])-1] + " , "+ date[2]
+
+	# calculating month name and year using number 
+	'''
+
+	print "\nEnter the colour in rgb format :"
+	r = int(raw_input("r = "))
+	g = int(raw_input("g = "))
+	b = int(raw_input("b"))
+	if(r>255 or g>255 or b>255):
+		print "Invalid colour format"
+	rgb = r,g,b
+	print "The rgb tupple is :"
+	print rgb  
+
+def useDictonaries():
+	d = { }
+
+	print "\nEnter inputs :"
+
+	ans = 'y'
+	while ans == 'y' or ans == 'Y':
+			
+		prn = raw_input("\nEnter prn : ")
+		marks = raw_input("Enter marks : ")
+		d[prn]=marks
+
+		ans = raw_input("want to add more entries y/n : ")
+
+	print "\nThe dictonaries after entries is : "
+	for key in d.iterkeys():
+		print "%s : %s " % (key,d[key])
+
+	print "\nThe dictonary after sorting : "
+	
+	for key in sorted(d.iterkeys()):
+		print "%s : %s" % (key, d[key])
 
 
 if __name__=="__main__":
